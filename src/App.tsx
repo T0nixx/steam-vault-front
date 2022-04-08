@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import Home from "./components/Home";
 import SteamAuth from "./components/SteamAuth";
 import useProfile from "./useProfile";
 
@@ -15,7 +16,7 @@ const App = (): JSX.Element => {
     <div className="App">
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<div>{JSON.stringify(profile)}</div>} />
+          <Route path="/" element={<Home />} />
           <Route
             path="*"
             element={
