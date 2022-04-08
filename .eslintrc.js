@@ -18,7 +18,7 @@ module.exports = {
     // prettier
     // "prettier/prettier": ["error"],
     // TypeScript
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-object-literal-type-assertion": "off",
     "no-use-before-define": "off",
