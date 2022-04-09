@@ -1,0 +1,35 @@
+.game-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.game-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 15px;
+  width: 200px;
+  height: 300px;
+}
+
+.game-card {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 5px 5px 0px black;
+}
+
+.playtime-container {
+  position: absolute;
+  z-index: 2;
+}
+
+.playtime {
+  position: relative;
+  top: 5px;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: #3d4450;
+  box-shadow: 0px 2px 1px 0px black;
+  border: #3d4450;
+}

@@ -1,6 +1,9 @@
 import axios from "axios";
-import React, { FunctionComponent, useEffect, useState } from "react";
+import "./Home.css";
+import React, { FunctionComponent, useEffect } from "react";
+import useGames, { GameInfo } from "../useGames";
 import useProfile from "../useProfile";
+// import { Link } from "react-router-dom";
 
 const { REACT_APP_API_URL } = process.env;
 
@@ -16,24 +19,22 @@ const Home: FunctionComponent = () => {
 
       setGames(response.data.games);
     };
-    if (profile === null) return;
+    if (profile === null || games.length !== 0) return;
     getOwnedGames(profile.steam_id);
-  }, [profile, games]);
+  }, [profile, games, setGames]);
 
   return (
     <div className="game-wrapper">
       {games.map(({ app_id, name, playtime }) => (
         <div className="game-container">
-          <h3>{name}</h3>
-          <p>Play Time: {(playtime / 60).toFixed(1)}Hour</p>
           <img
-            src={`https://steamcdn-a.akamaihd.net/steam/apps/${app_id}/library_hero.jpg`}
-            alt={`${name} hero`}
+            className="game-card"
+            src={`https://steamcdn-a.akamaihd.net/steam/apps/${app_id}/library_600x900_2x.jpg`}
+            alt={`${name} card`}
           />
-          <img
-            src={`https://steamcdn-a.akamaihd.net/steam/apps/${app_id}/logo.png`}
-            alt={`${name} logo`}
-          />
+          <div className="playtime-container">
+            <div className="playtime">{`${(playtime / 60).toFixed(1)} 시간`}</div>
+          </div>
         </div>
       ))}
     </div>
@@ -41,12 +42,6 @@ const Home: FunctionComponent = () => {
 };
 
 export default Home;
-
-interface GameInfo {
-  app_id: string;
-  name: string;
-  playtime: number;
-}
 
 interface GetOwnedGamesResponse {
   games: GameInfo[];
