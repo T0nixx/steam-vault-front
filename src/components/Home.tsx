@@ -1,9 +1,9 @@
 import axios from "axios";
 import "./Home.css";
 import React, { FunctionComponent, useEffect } from "react";
+import { Link } from "react-router-dom";
 import useGames, { GameInfo } from "../useGames";
 import useProfile from "../useProfile";
-// import { Link } from "react-router-dom";
 
 const { REACT_APP_API_URL } = process.env;
 
@@ -26,7 +26,7 @@ const Home: FunctionComponent = () => {
   return (
     <div className="game-wrapper">
       {games.map(({ app_id, name, playtime }) => (
-        <div className="game-container">
+        <Link to={`/details/:${app_id}`} className="game-container">
           <img
             className="game-card"
             src={`https://steamcdn-a.akamaihd.net/steam/apps/${app_id}/library_600x900_2x.jpg`}
@@ -35,7 +35,7 @@ const Home: FunctionComponent = () => {
           <div className="playtime-container">
             <div className="playtime">{`${(playtime / 60).toFixed(1)} 시간`}</div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

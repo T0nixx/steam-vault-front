@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import SteamAuth from "./components/SteamAuth";
 import useProfile from "./useProfile";
 import "./App.css";
+import Detail from "./components/Detail";
 
 const App = (): JSX.Element => {
   const [profile, setProfile] = useProfile();
@@ -18,6 +19,7 @@ const App = (): JSX.Element => {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/details/:app_id" element={<Detail />} />
           <Route
             path="*"
             element={

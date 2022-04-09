@@ -1,0 +1,28 @@
+.game-images-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+}
+
+.hero {
+  width: 100%;
+}
+
+.logo {
+  width: 20%;
+  position: absolute;
+  z-index: 1;
+}
+
+.contents-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.contents-container > * {
+  margin: 10px;
+}
