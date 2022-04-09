@@ -5,7 +5,7 @@ import SteamAuth from "./components/SteamAuth";
 import useProfile from "./useProfile";
 
 const App = (): JSX.Element => {
-  const { profile, setProfile } = useProfile();
+  const [profile, setProfile] = useProfile();
   const isLoggedIn = profile !== null;
 
   if (isLoggedIn === false) {

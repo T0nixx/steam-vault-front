@@ -5,8 +5,8 @@ import useProfile from "../useProfile";
 const { REACT_APP_API_URL } = process.env;
 
 const Home: FunctionComponent = () => {
-  const { profile } = useProfile();
-  const [games, setGames] = useState<GameInfo[]>([]);
+  const [profile] = useProfile();
+  const [games, setGames] = useGames();
 
   useEffect(() => {
     const getOwnedGames = async (steam_id: string) => {

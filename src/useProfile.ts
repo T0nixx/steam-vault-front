@@ -6,10 +6,7 @@ export type SteamUserProfile = {
   persona_name: string;
 } | null;
 
-export default function useProfile(): {
-  profile: SteamUserProfile;
-  setProfile: Dispatch<SteamUserProfile>;
-} {
+export default function useProfile(): [SteamUserProfile, Dispatch<SteamUserProfile>] {
   const validateProfile = (profile: any): profile is SteamUserProfile =>
     profile !== null && "steam_id" in profile && "avatar" in profile && "persona_name" in profile;
 
@@ -27,8 +24,5 @@ export default function useProfile(): {
     setProfile(userProfile);
   };
 
-  return {
-    setProfile: saveProfile,
-    profile,
-  };
+  return [profile, saveProfile];
 }
