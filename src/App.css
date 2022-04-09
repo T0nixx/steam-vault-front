@@ -1,0 +1,9 @@
+@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+body {
+  background: radial-gradient(at 30%, #303c51, #1a1f26);
+  background-attachment: fixed;
+  margin: 0px;
+}
+#root {
+  font-family: "NanumSquare";
+}

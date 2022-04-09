@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import SteamAuth from "./components/SteamAuth";
 import useProfile from "./useProfile";
+import "./App.css";
 
 const App = (): JSX.Element => {
   const [profile, setProfile] = useProfile();
