@@ -1,7 +1,7 @@
 import { Dispatch, useState } from "react";
 
 export interface GameInfo {
-  app_id: string;
+  app_id: number;
   name: string;
   playtime: number;
 }
@@ -21,7 +21,7 @@ export default function useGames(): [GameInfo[], Dispatch<GameInfo[]>] {
   const [games, setGames] = useState(getGames());
 
   const saveGame = (gamesToSave: GameInfo[]) => {
-    sessionStorage.setItem("game", JSON.stringify(gamesToSave));
+    sessionStorage.setItem("games", JSON.stringify(gamesToSave));
     setGames(gamesToSave);
   };
 
