@@ -1,6 +1,6 @@
 import React, { useEffect, FunctionComponent, Dispatch } from "react";
 import { SteamUserProfile } from "../useProfile";
-// import axios from "axios";
+import "./SteamAuth.css";
 
 const { REACT_APP_API_URL } = process.env;
 
@@ -39,10 +39,10 @@ const SteamAuth: FunctionComponent<{
 
   return (
     <div className="steam-auth-wrapper">
-      <button type="button" onClick={handleClick}>
+      <h1>Please Login With Steam.</h1>
+      <button id="login" type="button" onClick={handleClick}>
         <img src="/images/sits_large_border.png" alt="sign in through steam" />
       </button>
-      <p>{REACT_APP_API_URL}</p>
     </div>
   );
 };
